@@ -12,10 +12,15 @@ package testinc1000;
 public class Inc1000 extends Thread{
     static int cont;
     
+    @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
-            cont++;
+            inc1();
             
         }
+    }
+    
+    synchronized void inc1() {
+        cont++;
     }
 }
